@@ -1,6 +1,6 @@
 package com.udg.prueba.controller;
 
-import com.udg.prueba.service.Operacion;
+import com.udg.prueba.service.OperacionService;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -11,14 +11,14 @@ import javax.servlet.http.HttpServletResponse;
 
 
 @WebServlet(name = "Suma", urlPatterns = {"/suma"})
-public class Suma extends HttpServlet {
+public class SumaController extends HttpServlet {
     
-    private Operacion operacion;
+    private OperacionService operacion;
 
     @Override
     public void init() throws ServletException {
         super.init();
-        operacion = new Operacion();
+        operacion = new OperacionService();
     }
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -52,10 +52,5 @@ public class Suma extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
     }
-    
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
 
 }

@@ -1,6 +1,6 @@
 package com.udg.prueba.service;
 
-public class Operacion {
+public class OperacionService {
 
     public Integer suma(Integer a, Integer b){
         return a+b;
